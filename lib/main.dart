@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/localization.dart';
 
+import 'app_ui.dart';
 import 'localization/localize.dart';
 import 'router/mobile_router.dart';
 import 'support/styles/app_themes.dart';
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: AppThemes.theme,
+      theme: HHackTheme.small,
+      debugShowCheckedModeBanner: false,
       routerConfig: MobileRouter.router,
       supportedLocales: Localization.supportedLocales,
       localizationsDelegates: Localization.localizationsDelegates,

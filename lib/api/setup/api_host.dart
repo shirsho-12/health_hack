@@ -12,7 +12,7 @@ class ApiHost {
 
   static String get baseURL => 'https://$baseApiPath/$versionPath';
 
-  // TODO Implemented when sessionManager has be implemented
+  // TO DO Implemented when sessionManager has be implemented
   // static Map<String, dynamic> get sessionHeaders {
   //   final email = SessionManager.instance.user?.email;
   //   final token = SessionManager.instance.user?.token;

@@ -33,7 +33,7 @@ class ApiProvider {
     final requestOptions = Options(
       method: endpoint.method,
       contentType: contentTypeValue,
-      // TODO Uncomment when sessionHeaders has be implemented
+      // TO DO Uncomment when sessionHeaders has be implemented
       // headers: ApiHost.sessionHeaders,
     );
 
