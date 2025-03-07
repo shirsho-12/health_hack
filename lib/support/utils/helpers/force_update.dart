@@ -4,13 +4,13 @@ import '../../../features/force_update/use_case/get_app_info_use_case.dart';
 import '../../../features/force_update/use_case/get_minimum_version_use_case.dart';
 import '../../../router/mobile_router.dart';
 
-/// Classe que gerencia e avalia se o app deve ser atualizado ou não.
+/// Class that manages and evaluates whether the app should be updated or not.
 ///
-/// Inicia a partir da função `verifyVersion`, na qual pega essa informação do servidor,
-/// e verifica se a versão corrente nos aplicativos é a versão minima suportada pelo servidor,
-/// caso não seja redireciona o app para a tela de atualização do app.
+/// It starts from the `verifyVersion` function, which fetches this information from the server,
+/// and checks if the current version of the app is the minimum version supported by the server.
+/// If not, it redirects the app to the update screen.
 ///
-/// ***Para utilizar corretamente esse modulo certifique-se todas as dependências necessárias estão no seu projeto.***
+/// ***To use this module correctly, make sure all necessary dependencies are in your project.***
 abstract class ForceUpdateProtocol {
   void verifySession();
 }
@@ -29,9 +29,11 @@ class ForceUpdate extends ForceUpdateProtocol {
   // Public functions
   @override
   void verifySession() {
-    getAppInfoUseCase.execute(completion: (appInfo) {
-      _getServerMinimumVersionBy(appInfo);
-    });
+    getAppInfoUseCase.execute(
+      completion: (appInfo) {
+        _getServerMinimumVersionBy(appInfo);
+      },
+    );
   }
 
   // Private functions
@@ -44,10 +46,18 @@ class ForceUpdate extends ForceUpdateProtocol {
     );
   }
 
-  void _checkAppVersionToForceUpdateIfNeeded(AppInfo appInfo, MinimumVersion minimumVersion) {
-    if (appInfo.version.toIntVersion >= minimumVersion.versionNumber.toIntVersion) return;
+  void _checkAppVersionToForceUpdateIfNeeded(
+    AppInfo appInfo,
+    MinimumVersion minimumVersion,
+  ) {
+    if (appInfo.version.toIntVersion >=
+        minimumVersion.versionNumber.toIntVersion) {
+      return;
+    }
 
-    MobileRouter.redirectToForceUpdate(isRequiredVersion: minimumVersion.isRequiredVersion ?? false);
+    MobileRouter.redirectToForceUpdate(
+      isRequiredVersion: minimumVersion.isRequiredVersion ?? false,
+    );
   }
 }
 

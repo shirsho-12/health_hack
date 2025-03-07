@@ -25,5 +25,7 @@
   "newUserHint": "还没有账户？",
   "signInHint": "已经有账户？",
   "signUpHere": "在这里注册",
-  "signInHere": "在这里登录"
+  "signInHere": "在这里登录",
+  "english": "英语",
+  "chinese": "中文"
  }

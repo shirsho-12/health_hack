@@ -25,5 +25,7 @@
     "newUserHint": "Don't have an account?",
     "signInHint": "Already have an account?",
     "signUpHere": "Sign up here",
-    "signInHere": "Sign in here"
+    "signInHere": "Sign in here",
+    "english": "English",
+    "chinese": "Chinese"
 }

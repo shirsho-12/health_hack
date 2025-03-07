@@ -1,9 +1,12 @@
 import 'dart:developer' as devtools show log;
 import 'dart:math';
+import 'package:country_flags/country_flags.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../app_ui.dart';
 import '../../localization/localize.dart';
+import '../../support/app_language.dart';
 
 abstract class InitialScreenViewModelProtocol extends ChangeNotifier {}
 
@@ -26,6 +29,50 @@ class InitialScreenView extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: [
+            PopupMenuButton<String>(
+              icon: const Icon(Icons.language),
+              onSelected: (value) {
+                // Handle language selection
+                // await prefs.setString('locale', value);
+                context.read<AppLanguage>().changeLanguage(
+                  value == 'en'
+                      ? const Locale('en', 'US')
+                      : const Locale('zh', 'CN'),
+                );
+                devtools.log('Selected language: $value');
+              },
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem<String>(
+                    value: 'en',
+                    child: Row(
+                      children: [
+                        CountryFlag.fromLanguageCode('en'),
+                        const SizedBox(width: 8),
+                        Text(Localize.instance.l10n.english),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem<String>(
+                    value: 'zh',
+                    child: Row(
+                      children: [
+                        CountryFlag.fromLanguageCode('zh-cn'),
+                        const SizedBox(width: 8),
+                        Text(Localize.instance.l10n.chinese),
+                      ],
+                    ),
+                  ),
+                ];
+              },
+            ),
+          ],
+        ),
+
         body: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(

@@ -12,16 +12,16 @@ class MobileRouter {
   static final GlobalKey<NavigatorState> rootNavigatorKey =
       GlobalKey<NavigatorState>();
 
-  static const String initialScreenRoute = '/initial_screen_route';
+  static const String landingScreenRoute = '/landing';
   static const String forceUpdateRoute = '/force_update';
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: initialScreenRoute,
+    initialLocation: landingScreenRoute,
     routes: <RouteBase>[
       GoRoute(
-        path: initialScreenRoute,
-        name: initialScreenRoute,
+        path: landingScreenRoute,
+        name: landingScreenRoute,
         builder: (_, __) => const InitialScreenViewController(),
       ),
       GoRoute(
