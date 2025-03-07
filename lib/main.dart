@@ -4,7 +4,6 @@ import 'package:flutter_gen/gen_l10n/localization.dart';
 import 'app_ui.dart';
 import 'localization/localize.dart';
 import 'router/mobile_router.dart';
-import 'support/styles/app_themes.dart';
 import 'support/utils/service_locator/service_locator.dart';
 
 void main() {
