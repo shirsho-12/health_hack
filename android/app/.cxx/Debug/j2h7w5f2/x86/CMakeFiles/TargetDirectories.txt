@@ -1,0 +1,2 @@
+C:/Users/Shirshajit/StudioProjects/health_hack/android/app/.cxx/Debug/j2h7w5f2/x86/CMakeFiles/edit_cache.dir
+C:/Users/Shirshajit/StudioProjects/health_hack/android/app/.cxx/Debug/j2h7w5f2/x86/CMakeFiles/rebuild_cache.dir

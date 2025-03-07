@@ -35,3 +35,13 @@ To initialize and install the bricks in this project, run:
 mason init
 mason get
 ```
+
+## Tech Stack
+
+- Flutter
+- Firebase
+- FastAPI
+
+### State Management - Riverpod
+
+Riverpod is a provider package that makes it easy to manage state in Flutter applications.

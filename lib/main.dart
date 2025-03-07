@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp.router(
       theme: AppThemes.theme,
       routerConfig: MobileRouter.router,
@@ -24,6 +23,5 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: Localization.localizationsDelegates,
       onGenerateTitle: (context) => Localize.instance.of(context).appTitle,
     );
-    
   }
 }
