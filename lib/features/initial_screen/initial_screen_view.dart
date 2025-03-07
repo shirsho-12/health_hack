@@ -3,10 +3,10 @@ import 'dart:math';
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../app_ui.dart';
 import '../../localization/localize.dart';
-import '../../support/app_language.dart';
+import '../../support/utils/service_locator/service_locator.dart';
 
 abstract class InitialScreenViewModelProtocol extends ChangeNotifier {}
 
@@ -26,6 +26,7 @@ class InitialScreenView extends StatelessWidget {
       MediaQuery.of(context).size.height * 0.08,
       60,
     );
+    final prefs = ServiceLocator.get<SharedPreferences>();
 
     return SafeArea(
       child: Scaffold(
@@ -35,14 +36,10 @@ class InitialScreenView extends StatelessWidget {
           actions: [
             PopupMenuButton<String>(
               icon: const Icon(Icons.language),
-              onSelected: (value) {
+              onSelected: (value) async {
                 // Handle language selection
-                // await prefs.setString('locale', value);
-                context.read<AppLanguage>().changeLanguage(
-                  value == 'en'
-                      ? const Locale('en', 'US')
-                      : const Locale('zh', 'CN'),
-                );
+                if (value == prefs.getString('locale')) return;
+                await prefs.setString('locale', value);
                 devtools.log('Selected language: $value');
               },
               itemBuilder: (context) {
