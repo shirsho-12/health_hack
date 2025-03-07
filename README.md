@@ -9,6 +9,7 @@ Requirements:
 - Flutter (https://flutter.dev/docs/get-started/install)
 - Android Studio (for Android development)
 - Xcode (for iOS development)
+- Java 17 Development Kit (https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
 
 ### Installing
 
