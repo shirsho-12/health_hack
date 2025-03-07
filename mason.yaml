@@ -1,2 +1,5 @@
 bricks:
   model: ^0.9.1
+  project_setup: ^1.0.0+3
+  riverpod_simple_architecture: ^2.1.
+  bloc: ^0.4.0

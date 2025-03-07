@@ -4,13 +4,33 @@ Dementia Management Platform
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Requirements:
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter (https://flutter.dev/docs/get-started/install)
+- Android Studio (for Android development)
+- Xcode (for iOS development)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Run the following command to install the required packages:
+
+```
+flutter pub get
+```
+
+### Mason Blocks
+
+Mason is a tool that helps you create files and directories quickly using reusable templates called bricks. It is particularly useful in Flutter projects for setting up boilerplate code and ensuring consistency across different parts of the application.
+
+To install Mason, run:
+
+```
+dart pub global activate mason_cli
+```
+
+To initialize and install the bricks in this project, run:
+
+```
+mason init
+mason get
+```
