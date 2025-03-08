@@ -4,3 +4,4 @@ bricks:
   riverpod_simple_architecture: ^2.1.
   bloc: ^0.4.0
   app_ui: ^0.0.4
+  feature_brick: ^0.6.2
